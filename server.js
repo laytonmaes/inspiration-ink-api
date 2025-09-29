@@ -41,7 +41,27 @@ app.get("/api/v1/user", (request, response) => {
     response.send([item])
 })
 
+app.get("/api/v1/vague", (request, response) => {
+    const item = userPrompts[randomIndex(userPrompts)]
+
+    response.send([item])
+})
+
+app.get("/api/v1/specific", (request, response) => {
+    const item = userPrompts[randomIndex(userPrompts)]
+
+    response.send([item])
+})
+
 app.post("/api/v1/user", (request, response) => {
+    const { prompt } = request.body
+
+    userPrompts.push(prompt)
+
+    response.status(201).json({prompt:prompt, userPrompts})
+})
+
+app.post("/api/v1/gibberish", (request, response) => {
     const { prompt } = request.body
 
     userPrompts.push(prompt)

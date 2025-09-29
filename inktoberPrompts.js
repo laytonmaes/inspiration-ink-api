@@ -9,6 +9,7 @@ export const inktoberPrompts = [
 	"rock",
 	"broken",
 	"jump",
+	"jump",
 	"transport",
 	"worried",
 	"scared",
